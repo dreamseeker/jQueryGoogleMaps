@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Placemarks>
+	<Placemark>
+		<name>郡山市役所</name>
+		<description>
+			<![CDATA[
+				<img src="http://mw2.google.com/mw-panoramio/photos/thumbnail/25589455.jpg">
+				〒963-8024<br>
+				福島県郡山市朝日１丁目２３−７<br>
+				024-924-2491<br>
+				<a href="http://koriyama.fukushima.jp‎">koriyama.fukushima.jp‎</a>
+			]]>
+		</description>
+		<url>http://koriyama.fukushima.jp‎</url>
+		<LookAt>
+			<latitude>37.400529</latitude>
+			<longitude>140.359743</longitude>
+		</LookAt>
+		<icon />
+	</Placemark>
+	<Placemark>
+		<name>郡山市民文化センター</name>
+		<description>
+			<![CDATA[
+				<img src="http://mw2.google.com/mw-panoramio/photos/thumbnail/24671550.jpg">
+				〒963-8878<br>
+				福島県郡山市堤下町１−２<br>
+				024-934-2288<br>
+				<a href="http://bunka-manabi.or.jp‎">bunka-manabi.or.jp‎</a>
+			]]>
+		</description>
+		<LookAt>
+			<latitude>37.392745</latitude>
+			<longitude>140.378156</longitude>
+		</LookAt>
+		<icon>blueDot</icon>
+	</Placemark>
+	<Placemark>
+		<name>郡山市中央図書館</name>
+		<description>
+			<![CDATA[
+				<img src="http://mw2.google.com/mw-panoramio/photos/thumbnail/34055024.jpg">
+				〒963-8876<br>
+				福島県郡山市麓山１丁目５−２５<br>
+				024-923-6601<br>
+				<a href="http://koriyama.fukushima.jp‎‎">koriyama.fukushima.jp‎</a>
+			]]>
+		</description>
+		<LookAt>
+			<latitude>37.393830</latitude>
+			<longitude>140.374302</longitude>
+		</LookAt>
+		<icon>greenDot</icon>
+	</Placemark>
+</Placemarks>
