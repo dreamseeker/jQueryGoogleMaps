@@ -1,0 +1,31 @@
+@charset "UTF-8";
+
+header, footer, section, article, aside, nav, hgroup, address { display: block; }
+
+h1, h2, h3, h4 { margin: 0; }
+	h1 {}
+	h2 { color: #390; font-size: 16px; padding-bottom: 0.5em; border-bottom: solid 1px #CCC; margin-bottom: 0.5em; }
+
+header {}
+	header h1, header p { width: 960px; margin: 0 auto; }
+	header p { padding: 0.5em 0;}
+
+article { width: 960px; margin: 5em auto; }
+	article section { position: relative; padding-bottom: 3em; }
+		article section#single-left { width: 460px; float: left; }
+		article section#single-right { width: 460px; float: right; }
+
+div.wrap { overflow: hidden; }
+
+#gmap, #gmap2 { width: 460px; height: 230px; }
+#gmap3 { width: 960px; height: 480px; }
+#gmap4 { width: 740px; height: 370px; float: left; }
+
+#list { width: 200px; float: right; margin: 0; padding: 0; list-style: none; border-top: solid 1px #CCC; }
+	#list li { background: #FFF; padding: 0.5em 0; border-bottom: solid 1px #CCC; }
+
+.info-data { width: 360px; }
+	.info-data h1, .info-data h3 { color: #C60; font-size: 16px; padding-bottom: 0.5em; border-bottom: solid 1px #CCC; margin-bottom: 0.5em; }
+	.info-data img { margin-left: 10px; float:right; }
+	
+.code { min-height: 100px; overflow: auto; }

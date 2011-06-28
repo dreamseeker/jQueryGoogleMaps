@@ -1,0 +1,180 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>jQuery GoogleMaps プラグイン：サンプル</title>
+<link href="css/style.css" rel="stylesheet" type="text/css" media="screen" />
+<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+<script type="text/javascript">google.load("jquery", "1.5");</script>
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<script type="text/javascript" src="js/jquery.GoogleMaps.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$('#gmap').GoogleMaps({
+			lat: 37.400529,
+			lng: 140.359743,
+			zoom: 15
+		});
+		
+		$('#gmap2').GoogleMaps({
+			lat: 37.400529,
+			lng: 140.359743,
+			zoom: 15,
+			info_window: 1,
+			info_content: '<h1 style="color: #C60; font-size: 16px; padding-bottom: 0.5em; border-bottom: solid 1px #CCC; margin-bottom: 0.5em;">郡山市役所</h1><a href="http://koriyama.fukushima.jp‎">koriyama.fukushima.jp‎</a>',
+			icon_type: 'ltblueDot'
+		});
+		
+		$('#gmap3').GoogleMaps({
+			file: './sample.xml',
+			info_window_heading_level: 3
+		});
+		
+		$('#gmap4').GoogleMaps({
+			file: './sample.xml',
+			list_target: '#list'
+		});
+	});
+</script>
+<!--[if lt IE 9]><script type="text/javascript" src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+<body>
+<header>
+	<h1>jQuery Google Maps プラグイン</h1>
+	<p>ライセンス：MITライセンス<br>
+	ダウンロード：<a href="https://github.com/dreamseeker/jQuery-GoogleMaps">GitHub</a></p>
+</header>
+<article>
+	<h2>JavaScript サンプル</h2>
+	<pre class="code">
+&lt;script type="text/javascript" src="http://www.google.com/jsapi"&gt;&lt;/script&gt;
+&lt;script type="text/javascript"&gt;google.load("jquery", "1.4.2");&lt;/script&gt;
+&lt;script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="js/jquery.GoogleMaps.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript"&gt;
+  $(function(){
+    $('#gmap').GoogleMaps({
+        
+      // シングルマーカー関連
+      lat: 37.400529,                               // 緯度
+      lng: 140.359743,                              // 経度
+      zoom: 15,                                     // ズームレベル
+      info_window: 0,                               // 情報ウィンドウの表示（0, 1）
+      info_content: null,                           // 情報ウィンドウのコンテンツ（HTMLタグ）
+      
+      // マルチマーカー関連
+      file: null,                                   // XMLファイルのパス（記述例：'./sample.xml'）
+      info_window_class: 'info-data',               // 情報ウィンドウのclass名
+      info_window_heading_level: 1,                 // 情報ウィンドウ内タイトルの見出しレベル（1〜6）
+      list_target: null,                            // 連動リストを表示させるul要素のセレクタ（記述例：'ul#list'）
+  	
+      // マップタイプ関連
+      map_type_control: false,                      // MapTypeコントロール（Boolean）
+      map_type_id: google.maps.MapTypeId.ROADMAP,   // MapTypeID
+      
+      // アイコン関連
+      icon_type: null,                  　          // アイコンタイプ（アイコン一覧は、icons: {}で指定）
+      icons :{                  　                  // アイコンタイプの一覧（以下、デフォルト値）
+        redDot: {
+          markerImg: 'http://maps.google.co.jp/mapfiles/ms/icons/red-dot.png',
+          markerSize: new google.maps.Size( 32, 32 ),
+          markerOrigin: new google.maps.Point( 0, 0 ),
+          markerAnchor: new google.maps.Point( 16, 32 ),
+          markerScaleSize: new google.maps.Size( 32, 32 ),
+          shadowImg: 'http://maps.google.co.jp/mapfiles/ms/icons/msmarker.shadow.png',
+          shadowSize: new google.maps.Size( 59, 32 ),
+          shadowOrigin: new google.maps.Point( -14, 0 ),
+          shadowAnchor: new google.maps.Point( 29, 32 ),
+          shadowScaleSize: new google.maps.Size( 59, 32 )
+        },
+        blueDot: {（中略）},
+        greenDot: {（中略）},
+        ltblueDot: {（中略）},
+        yellowDot: {（中略）},
+        purpleDot: {（中略）},
+        pinkDot: {（中略）},
+        orangeDot: {（中略）}
+      }
+    });
+  });
+&lt;/script&gt;
+	</pre>
+	<h2>XML サンプル</h2>
+	<pre class="code">
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;Placemarks&gt;
+  &lt;Placemark&gt;
+    &lt;name&gt;郡山市役所&lt;/name&gt;		// 名称（情報ウィンドウ、リストに表示）
+    &lt;description&gt;			// 情報ウィンドウ内のコンテンツ
+      &lt;![CDATA[
+        〒963-8024&lt;br&gt;
+        福島県郡山市朝日１丁目２３−７&lt;br&gt;
+        024-924-2491&lt;br&gt;
+      ]]&gt;
+    &lt;/description&gt;
+    &lt;LookAt&gt;
+      &lt;latitude&gt;37.400529&lt;/latitude&gt;	// 緯度
+      &lt;longitude&gt;140.359743&lt;/longitude&gt;	// 経度
+    &lt;/LookAt&gt;
+    &lt;icon&gt;redDot&lt;/icon&gt;			// アイコンタイプ
+  &lt;/Placemark&gt;
+  &lt;Placemark&gt;
+    （中略）
+  &lt;/Placemark&gt;
+&lt;/Placemarks&gt;
+	</pre>
+	<div class="wrap">
+		<section id="single-left">
+			<h2>サンプル1（シングルマーカーのみ）</h2>
+			<div id="gmap"></div>
+			<pre class="code">
+$('#gmap').GoogleMaps({
+  lat: 37.400529,
+  lng: 140.359743,
+  zoom: 15
+});
+			</pre>
+		</section>
+		<section id="single-right">
+			<h2>サンプル2（シングルマーカー・情報ウィンドウあり）</h2>
+			<div id="gmap2"></div>
+			<pre class="code">
+$('#gmap2').GoogleMaps({
+  lat: 37.400529,
+  lng: 140.359743,
+  zoom: 15,
+  info_window: 1,
+  info_content: '&lt;h1 style="color: #C60; font-size: 16px; padding-bottom: 0.5em; border-bottom: solid 1px #CCC; margin-bottom: 0.5em;"&gt;郡山市役所&lt;/h1&gt;&lt;a href="http://koriyama.fukushima.jp‎"&gt;koriyama.fukushima.jp‎&lt;/a&gt;',
+  icon_type: 'ltblueDot'
+});
+			</pre>
+		</section>
+	</div>
+	<section>
+		<h2>サンプル3（マルチマーカー）</h2>
+		<div id="gmap3"></div>
+		<pre class="code">
+$('#gmap3').GoogleMaps({
+  file: './sample.xml',
+  info_window_heading_level: 3
+});
+		</pre>
+	</section>
+	<section>
+		<h2>サンプル4（マルチマーカー・リスト連動）</h2>
+		<div class="wrap">
+			<div id="gmap4"></div>
+			<ul id="list">
+			</ul>
+		</div>
+		<pre class="code">
+$('#gmap4').GoogleMaps({
+  file: './sample.xml',
+  list_target: 'ul#list'
+});
+		</pre>
+	</section>
+</article>
+<footer> </footer>
+</body>
+</html>
