@@ -6,10 +6,10 @@
  * http://www.opensource.org/licenses/mit-license.php
  * http://sourceforge.jp/projects/opensource/wiki/licenses%2FMIT_license
  *
- * Last Modified: 2011-03-02
+ * Last Modified: 2011-07-04
  * version: 1.01 
  *
- * This program checked the oparation on jQuery 1.4.2.
+ * This program checked the oparation on jQuery 1.6.2.
  * 
  */
 
@@ -30,6 +30,7 @@
 			var markers = [];
 			var singleMarkerMode = ( !opts.file ) ? true : false;
 			var file = opts.file;
+			var dataType = ( opts.data_type ) ? opts.data_type : 'xml';
 			var infoWindowMode = ( opts.info_window == 1 || !singleMarkerMode ) ? true : false;
 			var html = ( singleMarkerMode ) ? opts.info_content : '';
 			var linkMode = ( opts.link_target ) ? true : false;
@@ -58,7 +59,11 @@
 					if( singleMarkerMode ) {
 						GoogleMapsLoad();
 					} else {
-						XMLAjaxLoad();
+						if( dataType == 'xml' ){
+							XMLAjaxLoad();
+						} else if( dataType == 'json' ) {
+							JSONPAjaxLoad();
+						}
 					}
 				};
 				
@@ -186,7 +191,47 @@
 						}
 					});
 				}
-					
+				
+				// JSONP File Load
+				function JSONPAjaxLoad() {
+					$.getJSON( file + "&callback=?", function( json ) {
+						// Map Init
+						GoogleMapsLoad();
+						
+						// For Bounds
+						var bounds = new google.maps.LatLngBounds();
+						
+						// Loaded Data Setting
+						$.each( json.placemarks, function(i){
+							var $obj = json.placemarks[i];
+							
+							// Set Properties
+							latlng = new google.maps.LatLng(
+								parseFloat( $obj.lookat['latitude'] ),
+								parseFloat( $obj.lookat["longitude"] )
+							);
+							var name = $obj.name;
+							var description = $obj.description;
+							var url = $obj.url;
+							var custom_icon = $obj.icon;
+							
+							// Set Info Window HTML
+							var html  = '<div class="' + opts.info_window_class + '">';
+								html += '<h' + opts.info_window_heading_level + '>' + name + '</h' + opts.info_window_heading_level + '>';
+								html += description;
+								html += '</div>';
+							
+							// Create Marker
+							CreateMarker( map_canvas, latlng, custom_icon, html, name, url, i );
+							
+							// Fit Baunds
+							bounds.extend( latlng );
+							map_canvas.fitBounds( bounds );
+							map_canvas.setCenter( bounds.getCenter() );
+						})
+					});
+				}
+				
 		});
 		
 	};
@@ -209,8 +254,9 @@
 		map_type_control: false,
 		map_type_id: google.maps.MapTypeId.ROADMAP,
 		
-		// PLACEMAKERS XML PATH
+		// PLACEMAKERS File PATH & Data Type
 		file: null,
+		data_type: null,
 		
 		// INFORMATION WINDOW
 		info_window: 0,
