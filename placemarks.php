@@ -1,4 +1,16 @@
 <?php
+/*
+ * XML(JSON) generator for jQuery GoogleMaps Plugin
+ *
+ * Copyright (c) 2011 TORU KOKUBUN (http://d-s-b.jp/)
+ * Licensed under MIT Lisence:
+ * http://www.opensource.org/licenses/mit-license.php
+ * http://sourceforge.jp/projects/opensource/wiki/licenses%2FMIT_license
+ *
+ * Last Modified: 2011-07-04
+ * version: 1.00 
+ * 
+ */
 
 	/* ---------------------------------------------------------
 	
