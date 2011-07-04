@@ -12,9 +12,11 @@ header {}
 
 article { width: 960px; margin: 5em auto; }
 	article section { position: relative; padding-bottom: 3em; }
+		article section#map-sample { padding-bottom: 0; }
 		article section#single-left { width: 460px; float: left; }
 		article section#single-right { width: 460px; float: right; }
 
+#map-sample {}
 div.wrap { overflow: hidden; }
 
 #gmap, #gmap2 { width: 460px; height: 230px; }
@@ -29,3 +31,32 @@ div.wrap { overflow: hidden; }
 	.info-data img { margin-left: 10px; float:right; }
 	
 .code { min-height: 100px; overflow: auto; }
+
+section dt {
+	font-weight: bold;
+	padding: 0.5em 0 0;
+	}
+section dd {
+	padding: 0.5em 0;
+	}
+
+section dd ul {
+	padding-top: 0.25em;
+	}
+
+section dd.default {
+	background: #EFEFEF;
+	padding: 0.25em 1em;
+	}
+
+section dd.default span {
+	padding-right: 1em;
+	}
+
+section dd span.caution {
+	display: block;
+	color: #C00;
+	font-size: 80%;
+	line-height: 1.4em;
+	padding-top: 1em;
+	}
