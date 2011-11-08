@@ -57,6 +57,8 @@
 		<section>
 			<h2>更新履歴</h2>
 			<dl>
+				<dt>2011.11.08</dt>
+				<dd>サンプル4のソースコードで、data_typeの指定が抜けてるのを修正しました。</dd>
 				<dt>2011.07.04</dt>
 				<dd>jQuery Google Maps プラグイン ver 1.02を公開。<br>
 					外部ファイルの読込で、JSONに対応しました。<br>
@@ -117,6 +119,7 @@ $('#gmap3').GoogleMaps({
 				<pre class="code">
 $('#gmap4').GoogleMaps({
   file: 'http://demo.5020.jp/plugins/jQuery/jQueryGoogleMaps/placemarks.php?format=json',
+  data_type: 'json',
   list_target: 'ul#list'
 });
 		</pre>
