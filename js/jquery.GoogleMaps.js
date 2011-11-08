@@ -7,7 +7,7 @@
  * http://sourceforge.jp/projects/opensource/wiki/licenses%2FMIT_license
  *
  * Last Modified: 2011-07-04
- * version: 1.01 
+ * version: 1.02 
  *
  * This program checked the oparation on jQuery 1.6.2.
  * 
