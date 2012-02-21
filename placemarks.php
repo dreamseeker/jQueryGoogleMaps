@@ -31,8 +31,8 @@
 				〒963-8024<br>
 				福島県郡山市朝日１丁目２３−７<br>
 				024-924-2491<br>
-				<a href="http://koriyama.fukushima.jp">koriyama.fukushima.jp‎</a>',
-			'url' => 'http://koriyama.fukushima.jp',
+				<a href="http://www.city.koriyama.fukushima.jp/">city.koriyama.fukushima.jp‎</a>',
+			'url' => 'http://www.city.koriyama.fukushima.jp/',
 			'lookat' => array(
 				'latitude' => '37.400529',
 				'longitude' => '140.359743'
@@ -47,7 +47,7 @@
 				〒963-8878<br>
 				福島県郡山市堤下町１−２<br>
 				024-934-2288<br>
-				<a href="http://bunka-manabi.or.jp‎">bunka-manabi.or.jp‎</a>',
+				<a href="http://bunka-manabi.or.jp/">bunka-manabi.or.jp‎</a>',
 			'lookat' => array(
 				'latitude' => '37.392745',
 				'longitude' => '140.378156'
@@ -61,7 +61,7 @@
 				〒963-8876<br>
 				福島県郡山市麓山１丁目５−２５<br>
 				024-923-6601<br>
-				<a href="http://koriyama.fukushima.jp‎‎">koriyama.fukushima.jp‎</a>',
+				<a href="http://www.city.koriyama.fukushima.jp/">city.koriyama.fukushima.jp‎</a>',
 			'lookat' => array(
 				'latitude' => '37.393830',
 				'longitude' => '140.374302'
