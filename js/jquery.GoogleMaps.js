@@ -6,10 +6,10 @@
  * http://www.opensource.org/licenses/mit-license.php
  * http://sourceforge.jp/projects/opensource/wiki/licenses%2FMIT_license
  *
- * Last Modified: 2011-07-04
- * version: 1.02 
+ * Last Modified: 2012-05-17
+ * version: 1.03
  *
- * This program checked the oparation on jQuery 1.6.2.
+ * This program checked the oparation on jQuery 1.7.x
  * 
  */
 
@@ -68,7 +68,7 @@
 				};
 				
 				// Google Maps Load
-				function GoogleMapsLoad(){			
+				function GoogleMapsLoad(){
 					latlng = new google.maps.LatLng( opts.lat, opts.lng );
 					
 					mapOpts = {
@@ -84,7 +84,7 @@
 					if( singleMarkerMode ){ CreateMarker( map_canvas, latlng, iconType, html ); }
 				};
 				
-				// Create Marker				
+				// Create Marker	
 				function CreateMarker ( map_canvas, latlng, custom_icon, html, title, url, cnt ){
 					var icon = ( custom_icon ) ? icons[ custom_icon ] : icons[ 'redDot' ];
 					var linkurl = ( url ) ? url : '#';
@@ -280,8 +280,8 @@
 				markerScaleSize: new google.maps.Size( 32, 32 ),
 				shadowImg: 'http://maps.google.co.jp/mapfiles/ms/icons/msmarker.shadow.png',
 				shadowSize: new google.maps.Size( 59, 32 ),
-				shadowOrigin: new google.maps.Point( -14, 0 ),
-				shadowAnchor: new google.maps.Point( 29, 32 ),
+				shadowOrigin: new google.maps.Point( 0, 0 ),
+				shadowAnchor: new google.maps.Point( 16, 32 ),
 				shadowScaleSize: new google.maps.Size( 59, 32 )
 			},
 			blueDot: {
@@ -292,8 +292,8 @@
 				markerScaleSize: new google.maps.Size( 32, 32 ),
 				shadowImg: 'http://maps.google.co.jp/mapfiles/ms/icons/msmarker.shadow.png',
 				shadowSize: new google.maps.Size( 59, 32 ),
-				shadowOrigin: new google.maps.Point( -14, 0 ),
-				shadowAnchor: new google.maps.Point( 29, 32 ),
+				shadowOrigin: new google.maps.Point( 0, 0 ),
+				shadowAnchor: new google.maps.Point( 16, 32 ),
 				shadowScaleSize: new google.maps.Size( 59, 32 )
 			},
 			greenDot: {
@@ -304,8 +304,8 @@
 				markerScaleSize: new google.maps.Size( 32, 32 ),
 				shadowImg: 'http://maps.google.co.jp/mapfiles/ms/icons/msmarker.shadow.png',
 				shadowSize: new google.maps.Size( 59, 32 ),
-				shadowOrigin: new google.maps.Point( -14, 0 ),
-				shadowAnchor: new google.maps.Point( 29, 32 ),
+				shadowOrigin: new google.maps.Point( 0, 0 ),
+				shadowAnchor: new google.maps.Point( 16, 32 ),
 				shadowScaleSize: new google.maps.Size( 59, 32 )
 			},
 			ltblueDot: {
@@ -316,8 +316,8 @@
 				markerScaleSize: new google.maps.Size( 32, 32 ),
 				shadowImg: 'http://maps.google.co.jp/mapfiles/ms/icons/msmarker.shadow.png',
 				shadowSize: new google.maps.Size( 59, 32 ),
-				shadowOrigin: new google.maps.Point( -14, 0 ),
-				shadowAnchor: new google.maps.Point( 29, 32 ),
+				shadowOrigin: new google.maps.Point( 0, 0 ),
+				shadowAnchor: new google.maps.Point( 16, 32 ),
 				shadowScaleSize: new google.maps.Size( 59, 32 )
 			},
 			yellowDot: {
@@ -328,8 +328,8 @@
 				markerScaleSize: new google.maps.Size( 32, 32 ),
 				shadowImg: 'http://maps.google.co.jp/mapfiles/ms/icons/msmarker.shadow.png',
 				shadowSize: new google.maps.Size( 59, 32 ),
-				shadowOrigin: new google.maps.Point( -14, 0 ),
-				shadowAnchor: new google.maps.Point( 29, 32 ),
+				shadowOrigin: new google.maps.Point( 0, 0 ),
+				shadowAnchor: new google.maps.Point( 16, 32 ),
 				shadowScaleSize: new google.maps.Size( 59, 32 )
 			},
 			purpleDot: {
@@ -340,8 +340,8 @@
 				markerScaleSize: new google.maps.Size( 32, 32 ),
 				shadowImg: 'http://maps.google.co.jp/mapfiles/ms/icons/msmarker.shadow.png',
 				shadowSize: new google.maps.Size( 59, 32 ),
-				shadowOrigin: new google.maps.Point( -14, 0 ),
-				shadowAnchor: new google.maps.Point( 29, 32 ),
+				shadowOrigin: new google.maps.Point( 0, 0 ),
+				shadowAnchor: new google.maps.Point( 16, 32 ),
 				shadowScaleSize: new google.maps.Size( 59, 32 )
 			},
 			pinkDot: {
@@ -352,8 +352,8 @@
 				markerScaleSize: new google.maps.Size( 32, 32 ),
 				shadowImg: 'http://maps.google.co.jp/mapfiles/ms/icons/msmarker.shadow.png',
 				shadowSize: new google.maps.Size( 59, 32 ),
-				shadowOrigin: new google.maps.Point( -14, 0 ),
-				shadowAnchor: new google.maps.Point( 29, 32 ),
+				shadowOrigin: new google.maps.Point( 0, 0 ),
+				shadowAnchor: new google.maps.Point( 16, 32 ),
 				shadowScaleSize: new google.maps.Size( 59, 32 )
 			},
 			orangeDot: {
@@ -364,8 +364,8 @@
 				markerScaleSize: new google.maps.Size( 32, 32 ),
 				shadowImg: 'http://maps.google.co.jp/mapfiles/ms/icons/msmarker.shadow.png',
 				shadowSize: new google.maps.Size( 59, 32 ),
-				shadowOrigin: new google.maps.Point( -14, 0 ),
-				shadowAnchor: new google.maps.Point( 29, 32 ),
+				shadowOrigin: new google.maps.Point( 0, 0 ),
+				shadowAnchor: new google.maps.Point( 16, 32 ),
 				shadowScaleSize: new google.maps.Size( 59, 32 )
 			}
 		}
