@@ -5,8 +5,8 @@
 <title>jQuery GoogleMaps プラグイン</title>
 <link href="css/style.css" rel="stylesheet" type="text/css" media="screen" />
 <script type="text/javascript" src="http://www.google.com/jsapi"></script>
-<script type="text/javascript">google.load("jquery", "1.6");</script>
-<script type="text/javascript" src="http://maps.google.com/maps/api/js?v=3.6&sensor=false"></script>
+<script type="text/javascript">google.load("jquery", "1.7");</script>
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
 <script type="text/javascript" src="js/jquery.GoogleMaps.js"></script>
 <script type="text/javascript">
 	$(function(){
@@ -44,7 +44,7 @@
 	<h1>jQuery Google Maps プラグイン</h1>
 	<p>ライセンス：MITライセンス<br>
 		ダウンロード：<a href="https://github.com/dreamseeker/jQueryGoogleMaps">GitHub</a><br>
-		バージョン：1.02</p>
+		バージョン：1.03</p>
 </header>
 <article>
 	<div class="wrap">
@@ -56,8 +56,11 @@
 		<section>
 			<h2>更新履歴</h2>
 			<dl>
+				<dt>2012.05.17</dt>
+				<dd>Google Maps API v3（v3.7以降）で、カスタムアイコンによる複数マーカーが表示されない不具合を修正しました。<br>
+					これに伴い、ShadowIconの初期値を変更しました。</dd>
 				<dt>2012.02.20</dt>
-				<dd>【既知の問題点】Google Maps API v3（v3.7以降）で、カスタムアイコンによる複数マーカーが表示されません。<br>
+				<dd class="line-through">【既知の問題点】Google Maps API v3（v3.7以降）で、カスタムアイコンによる複数マーカーが表示されません。<br>
 					暫定的な対応となりますが、Google Maps APIを読み込む際「/js?v=3.6&amp;sensor=false」のようにバージョンを指定してください。</dd>
 				<dt>2011.11.08</dt>
 				<dd>サンプル4のソースコードで、data_typeの指定が抜けてるのを修正しました。</dd>
@@ -246,8 +249,8 @@ $('#gmap4').GoogleMaps({
 		markerScaleSize: new google.maps.Size( 32, 32 ),
 		shadowImg: 'http://maps.google.co.jp/mapfiles/ms/icons/msmarker.shadow.png',
 		shadowSize: new google.maps.Size( 59, 32 ),
-		shadowOrigin: new google.maps.Point( -14, 0 ),
-		shadowAnchor: new google.maps.Point( 29, 32 ),
+		shadowOrigin: new google.maps.Point( 0, 0 ),
+		shadowAnchor: new google.maps.Point( 16, 32 ),
 		shadowScaleSize: new google.maps.Size( 59, 32 )
 	},
 	blueDot: {
@@ -258,8 +261,8 @@ $('#gmap4').GoogleMaps({
 		markerScaleSize: new google.maps.Size( 32, 32 ),
 		shadowImg: 'http://maps.google.co.jp/mapfiles/ms/icons/msmarker.shadow.png',
 		shadowSize: new google.maps.Size( 59, 32 ),
-		shadowOrigin: new google.maps.Point( -14, 0 ),
-		shadowAnchor: new google.maps.Point( 29, 32 ),
+		shadowOrigin: new google.maps.Point( 0, 0 ),
+		shadowAnchor: new google.maps.Point( 16, 32 ),
 		shadowScaleSize: new google.maps.Size( 59, 32 )
 	},
 	greenDot: {
@@ -270,8 +273,8 @@ $('#gmap4').GoogleMaps({
 		markerScaleSize: new google.maps.Size( 32, 32 ),
 		shadowImg: 'http://maps.google.co.jp/mapfiles/ms/icons/msmarker.shadow.png',
 		shadowSize: new google.maps.Size( 59, 32 ),
-		shadowOrigin: new google.maps.Point( -14, 0 ),
-		shadowAnchor: new google.maps.Point( 29, 32 ),
+		shadowOrigin: new google.maps.Point( 0, 0 ),
+		shadowAnchor: new google.maps.Point( 16, 32 ),
 		shadowScaleSize: new google.maps.Size( 59, 32 )
 	},
 	ltblueDot: {
@@ -282,8 +285,8 @@ $('#gmap4').GoogleMaps({
 		markerScaleSize: new google.maps.Size( 32, 32 ),
 		shadowImg: 'http://maps.google.co.jp/mapfiles/ms/icons/msmarker.shadow.png',
 		shadowSize: new google.maps.Size( 59, 32 ),
-		shadowOrigin: new google.maps.Point( -14, 0 ),
-		shadowAnchor: new google.maps.Point( 29, 32 ),
+		shadowOrigin: new google.maps.Point( 0, 0 ),
+		shadowAnchor: new google.maps.Point( 16, 32 ),
 		shadowScaleSize: new google.maps.Size( 59, 32 )
 	},
 	yellowDot: {
@@ -294,8 +297,8 @@ $('#gmap4').GoogleMaps({
 		markerScaleSize: new google.maps.Size( 32, 32 ),
 		shadowImg: 'http://maps.google.co.jp/mapfiles/ms/icons/msmarker.shadow.png',
 		shadowSize: new google.maps.Size( 59, 32 ),
-		shadowOrigin: new google.maps.Point( -14, 0 ),
-		shadowAnchor: new google.maps.Point( 29, 32 ),
+		shadowOrigin: new google.maps.Point( 0, 0 ),
+		shadowAnchor: new google.maps.Point( 16, 32 ),
 		shadowScaleSize: new google.maps.Size( 59, 32 )
 	},
 	purpleDot: {
@@ -306,8 +309,8 @@ $('#gmap4').GoogleMaps({
 		markerScaleSize: new google.maps.Size( 32, 32 ),
 		shadowImg: 'http://maps.google.co.jp/mapfiles/ms/icons/msmarker.shadow.png',
 		shadowSize: new google.maps.Size( 59, 32 ),
-		shadowOrigin: new google.maps.Point( -14, 0 ),
-		shadowAnchor: new google.maps.Point( 29, 32 ),
+		shadowOrigin: new google.maps.Point( 0, 0 ),
+		shadowAnchor: new google.maps.Point( 16, 32 ),
 		shadowScaleSize: new google.maps.Size( 59, 32 )
 	},
 	pinkDot: {
@@ -318,8 +321,8 @@ $('#gmap4').GoogleMaps({
 		markerScaleSize: new google.maps.Size( 32, 32 ),
 		shadowImg: 'http://maps.google.co.jp/mapfiles/ms/icons/msmarker.shadow.png',
 		shadowSize: new google.maps.Size( 59, 32 ),
-		shadowOrigin: new google.maps.Point( -14, 0 ),
-		shadowAnchor: new google.maps.Point( 29, 32 ),
+		shadowOrigin: new google.maps.Point( 0, 0 ),
+		shadowAnchor: new google.maps.Point( 16, 32 ),
 		shadowScaleSize: new google.maps.Size( 59, 32 )
 	},
 	orangeDot: {
@@ -330,8 +333,8 @@ $('#gmap4').GoogleMaps({
 		markerScaleSize: new google.maps.Size( 32, 32 ),
 		shadowImg: 'http://maps.google.co.jp/mapfiles/ms/icons/msmarker.shadow.png',
 		shadowSize: new google.maps.Size( 59, 32 ),
-		shadowOrigin: new google.maps.Point( -14, 0 ),
-		shadowAnchor: new google.maps.Point( 29, 32 ),
+		shadowOrigin: new google.maps.Point( 0, 0 ),
+		shadowAnchor: new google.maps.Point( 16, 32 ),
 		shadowScaleSize: new google.maps.Size( 59, 32 )
 	}
 }</pre>
@@ -374,8 +377,8 @@ $('#gmap4').GoogleMaps({
       map_type_id: google.maps.MapTypeId.ROADMAP,   // MapTypeID
       
       // アイコン関連
-      icon_type: null,                  　          // アイコンタイプ（アイコン一覧は、icons: {}で指定）
-      icons :{                  　                  // アイコンタイプの一覧（以下、デフォルト値）
+      icon_type: null,                              // アイコンタイプ（アイコン一覧は、icons: {}で指定）
+      icons :{                                      // アイコンタイプの一覧（以下、デフォルト値）
         redDot: {
           markerImg: 'http://maps.google.co.jp/mapfiles/ms/icons/red-dot.png',
           markerSize: new google.maps.Size( 32, 32 ),
@@ -384,8 +387,8 @@ $('#gmap4').GoogleMaps({
           markerScaleSize: new google.maps.Size( 32, 32 ),
           shadowImg: 'http://maps.google.co.jp/mapfiles/ms/icons/msmarker.shadow.png',
           shadowSize: new google.maps.Size( 59, 32 ),
-          shadowOrigin: new google.maps.Point( -14, 0 ),
-          shadowAnchor: new google.maps.Point( 29, 32 ),
+          shadowOrigin: new google.maps.Point( 0, 0 ),
+          shadowAnchor: new google.maps.Point( 16, 32 ),
           shadowScaleSize: new google.maps.Size( 59, 32 )
         },
         blueDot: {（中略）},
