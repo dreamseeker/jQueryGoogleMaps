@@ -32,6 +32,8 @@ div.wrap { overflow: hidden; }
 	
 .code { min-height: 100px; overflow: auto; }
 
+.line-through { text-decoration: line-through; }
+
 section dt {
 	font-weight: bold;
 	padding: 0.5em 0 0;
